@@ -1,12 +1,9 @@
-import React from 'react';
+import React from "react";
 
 class Footer extends React.Component {
-
-    render() {
-        return (
-                <p>Bashar AQ</p>
-        )
-    }
+  render() {
+    return <p>Bashar AQ</p>;
+  }
 }
 
 export default Footer;
