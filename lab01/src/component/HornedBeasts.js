@@ -1,17 +1,41 @@
 import React from "react";
 
-class HornedBeasts extends React.Component {
+import "bootstrap/dist/css/bootstrap.min.css";
+import Card from "react-bootstrap/Card";
+import Button from "react-bootstrap/Button";
+
+class HornedBeast extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      noOfRate: 0,
+    };
+  }
+
+  incrementedNumOfRate = () => {
+    this.setState({
+      noOfRate: this.state.noOfRate + 1,
+    });
+  };
+
   render() {
     return (
-      <div>
-        <h2>{this.props.title}</h2>
-        <img src={this.props.img} alt="" />
-        <p>{this.props.description}</p>
-        <p>{this.props.keyword}</p>
-        <p>{this.props.horns}</p>
-      </div>
+      <section>
+        <Card style={{ width: "18rem" }}>
+          <Card.Body>
+            <Card.Title>{this.props.title}</Card.Title>
+            <Card.Img
+              onClick={this.incrementedNumOfRate}
+              variant="top"
+              src={this.props.image_url}
+            />
+            <Card.Text>{this.props.discription}</Card.Text>
+            Rating of the image :unicorn: : {this.state.noOfRate}
+          </Card.Body>
+          <Button variant="primary">Go Somewhere</Button>{" "}
+        </Card>
+      </section>
     );
   }
 }
-
-export default HornedBeasts;
+export default HornedBeast;
