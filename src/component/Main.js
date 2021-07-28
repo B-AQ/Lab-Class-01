@@ -1,16 +1,17 @@
-import React from 'react';
-
-import HornedBeasts from './HornedBeasts';
-import data from './data.json';
+import React from "react";
+import "bootstrap/dist/css/bootstrap.min.css";
+import HornedBeasts from "./HornedBeasts";
 
 class Main extends React.Component {
   render() {
-    return data.map((element) => {
+    return this.props.data.map((element) => {
       return (
         <HornedBeasts
-          image_url={element.image_url}
+          keyword={element.title.changeToString()}
+          image={element.image}
           title={element.title}
           discription={element.discription}
+          dataContent={this.props.dataContent}
         />
       );
     });
